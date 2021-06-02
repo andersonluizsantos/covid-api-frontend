@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
@@ -21,7 +22,8 @@ export class Employee {
   providedIn: 'root'
 })
 export class HttpClientService {
-
+  
+  private readonly url = environment.api;
   constructor(
     private httpClient: HttpClient
   ) {
@@ -44,7 +46,7 @@ export class HttpClientService {
       'Authorization': sessionStorage.getItem('token')
     });
 
-    return this.httpClient.get<Categoria[]>('http://localhost:8083/categorias', { headers });
+    return this.httpClient.get<Categoria[]>(this.url + '/pessoas', { headers });
   }
 
   public deletePessoa(employee) {
