@@ -1,0 +1,15 @@
+<div class="container mt-4">
+  <div class="col">
+    <header>
+      <nav class ="navbar navbar-expand-md navbar-dark bg-dark">
+      <div><a href="https://www.javainuse.com" class="navbar-brand">Sistemas de Pessoas com COVID</a></div>  
+      <ul class="navbar-nav">
+        <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/" class="nav-link">Lista de Pessoas</a></li>
+        <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/addemployee" class="nav-link">Nova Pessoa</a></li>
+        <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class="nav-link">Entrar</a></li>
+        <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">Sair</a></li>   
+      </ul> 
+      </nav>  
+      </header>
+  </div>
+</div>

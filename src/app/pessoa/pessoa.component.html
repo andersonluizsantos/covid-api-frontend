@@ -1,0 +1,24 @@
+<div class="container mt-4">
+  <div class="col">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>CPF</th>
+          <th>Nome</th>
+          <th>Vacinado?</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let categoria of categorias">
+          <td>{{categoria.id}}</td>
+          <td>{{categoria.cpf}}</td>
+          <td>{{categoria.nome}}</td>
+          <td>{{categoria.vacinado}}</td>
+          <td><button class="btn btn-danger" (click)="deleteEmployee(categoria)"> Excluir</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
